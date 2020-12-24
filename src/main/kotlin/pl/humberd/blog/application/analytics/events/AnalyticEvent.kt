@@ -6,6 +6,8 @@ sealed class AnalyticEvent(
 ) {
     data class PageViewEvent(
         val userId: String,
+        val sessionId: String,
+        val viewId: String,
         val url: String,
         val referrer: String,
         private val _timestamp: Long
@@ -13,6 +15,8 @@ sealed class AnalyticEvent(
 
     data class PageScrollEvent(
         val userId: String,
+        val sessionId: String,
+        val viewId: String,
         val url: String,
         val referrer: String,
         val breakpoint: Int,

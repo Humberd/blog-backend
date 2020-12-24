@@ -19,6 +19,8 @@ class AnalyticsController(
         analyticsService.registerEvent(
             AnalyticEvent.PageViewEvent(
                 userId = body.userId,
+                sessionId = body.sessionId,
+                viewId = body.viewId,
                 url = body.url,
                 referrer = body.referrer,
                 _timestamp = Instant.now().toEpochMilli()
@@ -31,6 +33,8 @@ class AnalyticsController(
         analyticsService.registerEvent(
             AnalyticEvent.PageScrollEvent(
                 userId = body.userId,
+                sessionId = body.sessionId,
+                viewId = body.viewId,
                 url = body.url,
                 referrer = body.referrer,
                 breakpoint = body.breakpoint,
